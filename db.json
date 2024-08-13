@@ -1,0 +1,6 @@
+{
+  "auth": {
+    "success": true,
+    "token": "mockToken12345"
+  }
+}
