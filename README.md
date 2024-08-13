@@ -1,79 +1,122 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+## Table of Contents
 
-# Getting Started
+1. [Project Overview](#project-overview)
+2. [Prerequisites](#prerequisites)
+3. [Setting Up the Project](#setting-up-the-project)
+4. [Running the Application](#running-the-application)
+5. [Project Structure](#project-structure)
+6. [Key Features](#key-features)
+7. [Troubleshooting](#troubleshooting)
+8. [Conclusion](#conclusion)
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Project Overview
 
-## Step 1: Start the Metro Server
+This project is a React Native application designed to provide a seamless user experience across both iOS and Android devices. The app includes a Home Screen that plays a video in landscape mode and features a secure user authentication system.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Prerequisites
 
-To start Metro, run the following command from the _root_ of your React Native project:
+Before you begin, ensure you have the following installed on your machine:
 
-```bash
-# using npm
-npm start
+1. **Node.js**: This is the JavaScript runtime needed to run the project.
+2. **React Native CLI**: A command-line interface for React Native projects.
+3. **Xcode** (for macOS users): Required to run the application on iOS simulators or devices.
+4. **Android Studio**: Required to run the application on Android emulators or devices.
 
-# OR using Yarn
-yarn start
-```
+## Setting Up the Project
 
-## Step 2: Start your Application
+Follow these steps to set up the project on your machine:
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+1. **Clone the Repository**:
 
-### For Android
+   - Download or clone the project repository to your local machine using the following command:
+     ```bash
+     git clone https://github.com/your-repo/react-native-app.git
+     ```
+   - Navigate into the project directory:
+     ```bash
+     cd react-native-app
+     ```
 
-```bash
-# using npm
-npm run android
+2. **Install Dependencies**:
+   - Install the required dependencies using `npm` or `yarn`:
+     ```bash
+     npm install
+     ```
+     or
+     ```bash
+     yarn install
+     ```
 
-# OR using Yarn
-yarn android
-```
+## Running the Application
 
-### For iOS
+Once the setup is complete, you can run the application on either an iOS or Android device/emulator.
 
-```bash
-# using npm
-npm run ios
+### For iOS:
 
-# OR using Yarn
-yarn ios
-```
+1. **Start the Metro Bundler**:
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+   - This tool handles the bundling of JavaScript code.
+   - Run the following command in your project directory:
+     ```bash
+     npx react-native start
+     ```
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+2. **Run the iOS App**:
+   - Open a new terminal window and run:
+     ```bash
+     npx react-native run-ios
+     ```
+   - This command builds and launches the app on the iOS simulator.
 
-## Step 3: Modifying your App
+### For Android:
 
-Now that you have successfully run the app, let's modify it.
+1. **Start the Metro Bundler**:
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+   - Run the following command in your project directory:
+     ```bash
+     npx react-native start
+     ```
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+2. **Run the Android App**:
+   - Open a new terminal window and run:
+     ```bash
+     npx react-native run-android
+     ```
+   - This command builds and launches the app on the Android emulator.
 
-## Congratulations! :tada:
+## Project Structure
 
-You've successfully run and modified your React Native App. :partying_face:
+Here is a brief overview of the project structure:
 
-### Now what?
+- **/screens**: Contains all the screen components like HomeScreen and LoginScreen.
+- **/components**: Reusable components used across the application.
+- **/services**: Contains service files, such as the authentication service for login.
+- **/assets**: Holds static assets like images and videos.
+- **App.tsx**: The entry point of the application, where the navigation logic is handled.
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+## Key Features
 
-# Troubleshooting
+- **HomeScreen**: Displays a video that plays automatically in landscape mode.
+- **User Authentication**: Users can log in using their email and password, with support for biometric authentication as well.
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+## Troubleshooting
 
-# Learn More
+If you encounter any issues, here are some common solutions:
 
-To learn more about React Native, take a look at the following resources:
+1. **Metro Bundler Issues**:
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+   - If the bundler crashes or fails to start, try clearing the cache:
+     ```bash
+     npx react-native start --reset-cache
+     ```
+
+2. **Build Failures**:
+
+   - Ensure that all dependencies are installed correctly and that your development environment is set up according to React Native's official documentation.
+
+3. **Simulator/Emulator Issues**:
+   - Ensure that your simulator or emulator is running before you execute the `run-ios` or `run-android` commands.
+
+## Conclusion
+
+Thank you for using this React Native application. If you have any questions or need further assistance, feel free to reach out. Happy coding!

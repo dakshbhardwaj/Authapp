@@ -2,14 +2,16 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Keychain from 'react-native-keychain';
 import TouchID from 'react-native-touch-id';
 
+// Configuration object for TouchID authentication
 const optionalConfigObject = {
   title: 'Authentication Required',
   color: '#e00606',
   fallbackLabel: 'Show Passcode',
 };
 
-export const login = async (email, password) => {
+export const login = async (email: string, password: string) => {
   try {
+    // Simulated login response for demonstration purposes
     const simulatedResponse = {
       success: true,
       token: 'mockToken12345',
@@ -17,6 +19,7 @@ export const login = async (email, password) => {
 
     const data = simulatedResponse;
 
+    // If login is successful, store the token
     if (data.success) {
       await AsyncStorage.setItem('userToken', data.token);
       return data;
@@ -29,7 +32,7 @@ export const login = async (email, password) => {
   }
 };
 
-export const saveCredentials = async (email, password) => {
+export const saveCredentials = async (email: string, password: string) => {
   try {
     await Keychain.setGenericPassword(email, password);
   } catch (error) {
@@ -55,5 +58,6 @@ export const authenticateBiometrics = async () => {
     return success;
   } catch (error) {
     console.error('Biometrics authentication failed', error);
+    throw error;
   }
 };

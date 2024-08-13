@@ -6,6 +6,7 @@ import Orientation from 'react-native-orientation-locker';
 const HomeScreen = () => {
   useEffect(() => {
     Orientation.lockToLandscape();
+
     return () => {
       Orientation.unlockAllOrientations();
     };
@@ -18,7 +19,7 @@ const HomeScreen = () => {
         style={styles.video}
         resizeMode="cover"
         repeat
-        controls={true}
+        controls
         onLoad={() => console.log('Video loaded')}
         onError={error => console.log('Video error:', error)}
       />
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
   video: {
     width: '100%',
     height: '100%',
-    zIndex: 1, // Ensures video is above other elements
+    zIndex: 1,
   },
 });
 
